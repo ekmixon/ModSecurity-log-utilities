@@ -53,5 +53,5 @@ class LogEntry:
                         self.__dict__[b[0]] = b[1]
 
     def __repr__(self):
-        return str(self.id) + ": " + str(self.msg)
+        return f"{str(self.id)}: {str(self.msg)}"
 

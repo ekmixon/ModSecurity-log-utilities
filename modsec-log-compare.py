@@ -29,13 +29,12 @@ def load_line(line):
 
 def load(fname):
     content = {}
-    f = open(fname, 'r')
-    for line in f:
-        (key, value) = load_line(line)
-        if not key in content:
-            content[key] = []
-        content[key].append(value)
-    f.close()
+    with open(fname, 'r') as f:
+        for line in f:
+            (key, value) = load_line(line)
+            if key not in content:
+                content[key] = []
+            content[key].append(value)
     return content
 
 
